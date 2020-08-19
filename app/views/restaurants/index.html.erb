@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Restaurants</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <div class="container d-flex justify-content-around">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Category</th>
+            <th colspan="4"></th>
+          </div>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @restaurants.each do |restaurant| %>
+          <tr>
+            <div class="container d-flex justify-content-around">
+              <td><%= restaurant.name %></td>
+              <td><%= restaurant.address %></td>
+              <td><%= restaurant.phone_number %></td>
+              <td><%= restaurant.category %></td>
+              <td><%= link_to restaurant_path(restaurant) do %>
+                    <i class="fas fa-binoculars"></i>
+                  <% end %>
+              </td>
+            </div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= link_to new_restaurant_path do %>
+    <i class="fas fa-ad fa-5x"></i>
+  <% end %>
+  <br>
+</div>
+
+
